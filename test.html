@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<script type="text/javascript" src="dll.js"></script>
+<body>
+<script type="text/javascript">
+	window.onload=function(argument) {
+		var c=Screen.View();
+		c.init();
+		var s=new Creame();
+		// s.setView('star.jpg',200,10);
+		var draw=new Sprite('draw',{
+			paint:function(sprite,ctx){
+				ctx.save();
+				sprite.left=500;
+				sprite.top=400;
+				sprite.width=200;
+				sprite.height=300;
+				ctx.fillStyle='white';
+				ctx.strokeStyle='rgb(100,100,195)';
+				ctx.fillRect(sprite.left,sprite.top,sprite.width,sprite.height);
+           		ctx.shadowColor = 'rgb(120,0,0)';
+            	ctx.shadowOffsetX = -4;
+            	ctx.shadowOffsetY = -4;
+            	ctx.shadowBlur = 8;
+            	ctx.fill();
+            	ctx.stroke();
+            	ctx.restore();
+
+			}
+		});
+		draw.paint();
+
+	}
+</script>
+
+</body>
+</html>
